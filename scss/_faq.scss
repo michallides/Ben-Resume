@@ -1,0 +1,64 @@
+/* FAQ */
+
+#faq {
+  .container {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+
+    h2 {
+      margin-bottom: 3rem;
+      line-height: 1;
+    }
+
+    .accordion {
+      border: $border;
+      border-radius: 0.3rem;
+
+      .question:not(:first-child),
+      .answer {
+        border-top: $border;
+      }
+
+      .question {
+        background: rgba($light-color, 0.3);
+        padding: 1rem 2rem;
+        line-height: 1.2;
+        cursor: pointer;
+
+        @include responsive(em(850)) {
+          padding: 1rem;
+        }
+
+        h3 {
+          @include responsive(em(850)) {
+            font-size: $fs-mid;
+          }
+        }
+      }
+
+      .answer {
+        padding: 2rem;
+        line-height: 1.2;
+
+        @include responsive(em(850)) {
+          padding: 1rem;
+        }
+      }
+
+      p {
+        margin: 0;
+
+        &:first-child {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .faq-info {
+      display: inline-block;
+      margin: 1.5rem 0 0 1.5rem;
+    }
+  }
+}
+
+/**************************************************/

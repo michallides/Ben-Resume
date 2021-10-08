@@ -1,0 +1,204 @@
+/* MENU BAR */
+
+.navbar {
+  display: none;
+  background: $body-color;
+  width: 100%;
+  min-width: rem(320);
+  position: fixed;
+  z-index: 9;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    overflow: hidden;
+
+    .logo {
+      font-size: $fs-h;
+      color: $white-color;
+      @include easeOut;
+
+      &:hover,
+      &:active {
+        color: $dark-color;
+      }
+    }
+
+    .navigation {
+      display: flex;
+      flex-grow: 1;
+
+      @include responsive(em(1115)) {
+        display: none;
+      }
+
+      &.show {
+        display: block;
+        flex-basis: 100%;
+
+        animation-name: slideDown;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+
+        @media screen and (min-width: (em(1116))) {
+          display: flex;
+          flex-basis: auto;
+        }
+      }
+
+      &.hiding {
+        display: block;
+        flex-basis: 100%;
+
+        animation-name: slideUp;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+      }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+
+        @include responsive(em(1115)) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        a {
+          color: $p-color;
+          margin: 0 1.5rem;
+          border-bottom: 1px solid transparent;
+          line-height: 1.2;
+          @include easeOut;
+
+          &.active,
+          &:hover,
+          &:active {
+            border-bottom: 1px solid $primary-color;
+          }
+
+          @include responsive(em(1115)) {
+            margin: 0.7rem 0 0 0.5rem;
+          }
+        }
+      }
+
+      .download {
+        @extend %button;
+        padding: 0.4rem 3rem;
+        font-size: $fs-alt;
+        font-weight: $fw-med;
+        outline: 2px solid transparent;
+
+        &:focus {
+          outline: 2px solid rgb(33, 46, 75);
+        }
+
+        @include responsive(em(1115)) {
+          margin: 1.2rem 0;
+        }
+      }
+    }
+
+    .hamburger-menu-icon {
+      display: none;
+
+      @include responsive(em(1115)) {
+        display: block;
+        cursor: pointer;
+
+        .hamburger-line {
+          display: block;
+          width: 32px;
+          height: 2px;
+          background: $white-color;
+          margin-bottom: 6px;
+          @include easeOut;
+          transition-duration: 0.2s;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &.closing {
+          .hamburger-line {
+            transition-duration: 0.3s;
+            &:nth-child(1) {
+              transform: translateY(8px);
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
+
+            &:nth-child(3) {
+              transform: translateY(-8px);
+            }
+          }
+        }
+
+        &.close {
+          .hamburger-line {
+            &:nth-child(1) {
+              transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
+
+            &:nth-child(3) {
+              transform: translateY(-8px) rotate(-45deg);
+            }
+          }
+        }
+
+        &.unclosing {
+          .hamburger-line {
+            transition-duration: 0.3s;
+            &:nth-child(1) {
+              transform: translateY(8px) rotate(0);
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
+
+            &:nth-child(3) {
+              transform: translateY(-8px) rotate(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes slideDown {
+  from {
+    max-height: 0;
+  }
+
+  to {
+    max-height: 20rem; /* Any bigger height than needed */
+  }
+}
+
+@keyframes slideUp {
+  from {
+    max-height: 20rem; /* Any bigger height than needed */
+  }
+
+  to {
+    max-height: 0;
+  }
+}
+
+/**************************************************/

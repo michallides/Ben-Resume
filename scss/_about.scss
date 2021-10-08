@@ -1,0 +1,73 @@
+/* ABOUT */
+
+#about {
+  .container {
+    display: grid;
+    grid-template-columns: 55% 45%;
+
+    @include responsive(em(850)) {
+      grid-template-columns: 100%;
+    }
+
+    h2 {
+      line-height: 1;
+    }
+
+    .about-info {
+      margin-right: 3rem;
+
+      @include responsive(em(1050)) {
+        margin-right: 1.5rem;
+      }
+
+      @include responsive(em(850)) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+      }
+
+      a {
+        color: $dark-color;
+      }
+    }
+
+    .about-img {
+      img {
+        border-radius: 3rem;
+      }
+    }
+
+    strong {
+      display: inline-block;
+      width: 35%;
+    }
+  }
+
+  .about-columns {
+    h2 {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @include container();
+    padding: {
+      top: 0;
+      bottom: 8rem;
+    }
+    display: flex;
+    gap: 2rem;
+
+    @include responsive(em(850)) {
+      flex-direction: column;
+    }
+
+    @include responsive(em(650)) {
+      padding: 1rem;
+    }
+  }
+}
+
+/**************************************************/

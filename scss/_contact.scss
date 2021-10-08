@@ -1,0 +1,119 @@
+/* CONTACT */
+
+#contact {
+  .container {
+    display: flex;
+    padding-bottom: 8rem;
+
+    @include responsive(em(850)) {
+      flex-direction: column;
+    }
+
+    .contact-form {
+      width: 50%;
+
+      @include responsive(em(850)) {
+        width: 100%;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        label {
+          position: absolute;
+          font: inherit;
+          color: $dark-color;
+          transform: translate(0, 0.4rem);
+          cursor: text;
+          @include easeOut;
+        }
+
+        input,
+        textarea {
+          cursor: text;
+          border: none;
+          border-bottom: $border;
+          padding: 0.4rem 0;
+          font: inherit;
+
+          ::placeholder {
+            color: $dark-color;
+            opacity: 0;
+          }
+
+          &:focus::placeholder {
+            opacity: 1;
+          }
+
+          &:focus + label,
+          &:not(:placeholder-shown) + label {
+            font-size: 0.85rem;
+            color: rgba($p-color, 0.8);
+            transform: translate(0, calc(0.4rem - 1.4rem));
+            cursor: default;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+        }
+      }
+
+      #submit-btn {
+        @extend %button;
+        border: 0;
+        padding: 1rem 5rem;
+        font-size: $fs-alt;
+        font-weight: $fw-light;
+      }
+    }
+
+    .contact-info {
+      margin: 0 auto;
+
+      @include responsive(em(850)) {
+        margin: 0;
+      }
+
+      h2 {
+        margin: 2rem 0;
+      }
+
+      .phone {
+        margin-bottom: 1rem;
+      }
+
+      .contact-mail {
+        display: inline-block;
+        color: $dark-color;
+        font-size: $fs-alt;
+        margin-bottom: 2rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+
+        .social-icon {
+          color: $p-color;
+          font-size: 1.5rem;
+          margin-bottom: 4rem;
+          @include easeOut;
+
+          &:hover,
+          &:active {
+            color: $dark-color;
+          }
+        }
+      }
+
+      .copyright {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+/*******************************************/

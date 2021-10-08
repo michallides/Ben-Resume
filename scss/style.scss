@@ -1,0 +1,101 @@
+/* STYLE */
+
+// Imports
+@import 'config';
+@import 'menu-bar';
+@import 'intro';
+@import 'about';
+@import 'testimonials';
+@import 'faq';
+@import 'contact';
+@import 'back-to-top';
+
+// General
+html,
+body {
+  min-width: rem(320);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: $fw-med;
+  line-height: 1.8;
+  color: $body-color;
+  background-color: $white-color;
+  text-align: left;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+h2,
+h3 {
+  font-weight: $fw-med;
+  margin: 0;
+}
+
+h2 {
+  font-size: $fs-h;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: $p-color;
+}
+
+input,
+textarea,
+input:hover,
+textarea:hover,
+input:active,
+textarea:active,
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border: $border;
+  color: $dark-color;
+}
+
+.container {
+  @include container();
+
+  @include responsive(em(1100)) {
+    margin: 0;
+  }
+
+  @include responsive(em(650)) {
+    padding: 1rem;
+  }
+}
+
+/**************************************************/

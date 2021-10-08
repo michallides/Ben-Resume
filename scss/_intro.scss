@@ -1,0 +1,81 @@
+/* INTRO */
+
+#intro {
+  .container {
+    display: flex;
+
+    @include responsive(em(850)) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .portrait {
+      max-width: 30rem;
+      padding: 0.8rem;
+
+      @include responsive(em(1050)) {
+        max-width: 25rem;
+      }
+
+      @include responsive-mm(em(930), em(851)) {
+        max-width: 20rem;
+      }
+    }
+
+    .intro-box {
+      display: flex;
+      padding: 0.8rem;
+      align-items: center;
+
+      .intro-title,
+      .intro-mail {
+        font-weight: $fw-med;
+        border-radius: 2.4rem;
+        line-height: 1;
+      }
+
+      .intro-title {
+        font-size: $fs-h;
+        background: $dark-color;
+        color: $white-color;
+        padding: 1rem 2.4rem;
+        margin-bottom: 1.3rem;
+
+        @include responsive(em(1050)) {
+          font-size: 2rem;
+          // padding: 0.1rem 1.7rem;
+        }
+
+        @include responsive(em(850)) {
+          margin-top: 0;
+        }
+
+        @include responsive(em(510)) {
+          font-size: 1.7rem;
+        }
+
+        @include responsive(em(460)) {
+          padding: 0.5rem 2.4rem;
+        }
+      }
+
+      .intro-mail {
+        font-size: 1.8rem;
+        background: $primary-color;
+        color: $dark-color;
+        padding: 0.8rem 2rem;
+
+        @include responsive(em(1050)) {
+          font-size: 1.6rem;
+          // padding: 0.1rem 1.4rem;
+        }
+
+        @include responsive(em(510)) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+/**************************************************/

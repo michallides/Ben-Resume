@@ -1,0 +1,70 @@
+/* CONFIG */
+
+// Variables
+$primary-color: #ffd500;
+$white-color: #fff;
+$dark-color: #010101;
+$body-color: #212529;
+$gray-color: #909090;
+$p-color: #7d7a7a;
+$testi-color: #f9f9f9;
+$light-color: lighten($p-color, 40);
+
+$border: 1px solid rgba($p-color, 0.3);
+
+$fw-light: 300;
+$fw-med: 400;
+$fw-bold: 700;
+
+$fs-h: 2.2rem;
+$fs-mid: 1.4rem;
+$fs-alt: 1.2rem;
+
+// Mixins
+@mixin container($width: 72rem, $padding: 3rem) {
+  max-width: $width;
+  padding: $padding;
+  margin: 0 auto;
+}
+
+@mixin easeOut {
+  transition: 0.4s all ease-out;
+}
+
+@mixin responsive($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin responsive-mm($max-width, $min-width) {
+  @media screen and(max-width: $max-width) and (min-width: $min-width) {
+    @content;
+  }
+}
+
+// Placeholders
+%button {
+  background: $primary-color;
+  border-radius: 2rem;
+  color: $dark-color;
+  cursor: pointer;
+  @include easeOut;
+
+  &:hover,
+  &:active {
+    color: $white-color;
+    background: $dark-color;
+  }
+}
+
+// Functions
+@function em($value-px, $base: 16) {
+  @return ($value-px / $base) * 1em;
+}
+
+@function rem($value-px, $base: 16) {
+  @return ($value-px / $base) * 1rem;
+}
+
+/**************************************************/
