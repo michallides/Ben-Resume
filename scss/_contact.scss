@@ -21,6 +21,11 @@
         flex-direction: column;
         margin-bottom: 2rem;
 
+        ::placeholder {
+          color: $dark-color;
+          opacity: 0;
+        }
+
         label {
           position: absolute;
           font: inherit;
@@ -37,11 +42,6 @@
           border-bottom: $border;
           padding: 0.4rem 0;
           font: inherit;
-
-          ::placeholder {
-            color: $dark-color;
-            opacity: 0;
-          }
 
           &:focus::placeholder {
             opacity: 1;

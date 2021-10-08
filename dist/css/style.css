@@ -550,6 +550,11 @@
   margin-bottom: 2rem;
 }
 
+#contact .container .contact-form .form-group ::placeholder {
+  color: #010101;
+  opacity: 0;
+}
+
 #contact .container .contact-form .form-group label {
   position: absolute;
   font: inherit;
@@ -566,12 +571,6 @@
   border-bottom: 1px solid rgba(125, 122, 122, 0.3);
   padding: 0.4rem 0;
   font: inherit;
-}
-
-#contact .container .contact-form .form-group input ::placeholder,
-#contact .container .contact-form .form-group textarea ::placeholder {
-  color: #010101;
-  opacity: 0;
 }
 
 #contact .container .contact-form .form-group input:focus::placeholder,
