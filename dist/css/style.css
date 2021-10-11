@@ -267,13 +267,14 @@
 
 @media screen and (max-width: 31.875em) {
   #intro .container .intro-box .intro-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 28.75em) {
   #intro .container .intro-box .intro-title {
-    padding: 0.5rem 2.4rem;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -293,6 +294,12 @@
 @media screen and (max-width: 31.875em) {
   #intro .container .intro-box .intro-mail {
     font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 28.75em) {
+  #intro .container .intro-box .intro-mail {
+    padding: 0.3rem 2rem;
   }
 }
 
