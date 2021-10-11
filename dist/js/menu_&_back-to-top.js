@@ -78,22 +78,27 @@ hamburger.click(function (e) {
   }
 });
 
-// Hide navigation after click on menu link (on smaller screens), without hiding animation on bigger screens (just remove class 'show')
-menuLink.click(function (e) {
-  e.preventDefault();
+// Hide navigation after click on menu link (on smaller screens), without hiding on bigger screens (just remove class 'show'). Don't hide after click on last 'Download" button
+menuLink
+  .click(function (e) {
+    e.preventDefault();
 
-  if (showNavigation && window.innerWidth <= 1115) {
-    hideNav();
-    hamburgerOpen();
+    if (showNavigation && window.innerWidth <= 1115) {
+      hideNav();
+      hamburgerOpen();
 
-    showNavigation = false;
-  } else if (showNavigation && window.innerWidth > 1115) {
-    navigation.removeClass('show');
-    hamburgerOpen();
+      showNavigation = false;
+    } else if (showNavigation && window.innerWidth > 1115) {
+      navigation.removeClass('show');
+      hamburgerOpen();
 
-    showNavigation = false;
-  }
-});
+      showNavigation = false;
+    }
+  })
+  .last()
+  .click(function () {
+    return false;
+  });
 
 /*******************
  **** Functions ****
